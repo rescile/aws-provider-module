@@ -1,4 +1,4 @@
-# AWS Peovider Module
+# AWS Provider Module
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Rescile UCS](https://img.shields.io/badge/provisioned%20by-Rescile%20UCS-purple.svg)](https://www.rescile.com/)
