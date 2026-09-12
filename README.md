@@ -82,6 +82,7 @@ AWS Account
 ├── LICENSE
 ├── NOTICE
 ├── CONTRIBUTING.md
+├── module.toml
 ├── input/
 │   └── aws.json
 ├── models/
@@ -91,7 +92,6 @@ AWS Account
 │   └── ...
 └── runtimes/
     └── ...
-└── module.toml
 ```
 
 The exact structure may evolve as additional resources are introduced. The intention is to keep resources independently understandable and make it straightforward for contributors to add new AWS capabilities.
