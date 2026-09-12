@@ -1,6 +1,0 @@
-[module]
-name = "AWS Account Module"
-url = "https://github.com/rescile/aws-account-module"
-version = "0.0.1"
-description = "Creates and configure AWS accounts as a managed resource target for subsequent resource deployments."
-rescile_version = ">=0.1.193"

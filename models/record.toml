@@ -1,8 +1,0 @@
-origin_resource = "zone"
-
-[[link_resources]]
-with = "record"
-join_properties = [
-  { from = "zone", as = "zone" }
-]
-create_relation = { type = "DERIVED_FROM" }
