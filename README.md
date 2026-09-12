@@ -1,12 +1,8 @@
-# AWS Account Module
+# AWS Peovider Module
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Rescile UCS](https://img.shields.io/badge/provisioned%20by-Rescile%20UCS-purple.svg)](https://www.rescile.com/)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
-
-This module defines a foundation for resource deployments on AWS. The module is designed for use with **Rescile UCS**, providing a standardized building block that can be combined with other infrastructure modules to construct complete cloud and hybrid-cloud environments.
-
-## What is this module?
 
 This module creates and configures an **AWS Account** as a managed infrastructure target for subsequent resource deployments. It provides the foundation on which additional AWS resources can be provisioned, connected and managed through the Rescile UCS infrastructure model. The goal is to establish a simple, reusable and community-extensible resource model for AWS infrastructure.
 
@@ -23,45 +19,40 @@ The module serves as  part of the **Rescile UCS infrastructure ecosystem**. Resc
                 │
                 ▼
 ┌──────────────────────────────┐
-│   Base Subscription Module   │
+│      Landing Zone Module     │
 │                              │
 │                              │
 └───────────────┬──────────────┘
                 │
                 ▼
 ┌──────────────────────────────┐
-│      AWS Account Module      │
+│      AWS Provider Module     │
 │                              │
 │                              │
-│  ...                         │
+│  aws.json                    │
 └──────────────────────────────┘
 ```
 
 UCS provides the common control plane, while individual modules describe the infrastructure resources that can be provisioned. This separation allows modules to remain focused on **what infrastructure should exist**, while UCS manages **how infrastructure is modeled, related and provisioned**. For more information, see the [Rescile UCS project](https://www.rescile.com/).
 
-## Resources
+## Dependencies
 
-| Resource            | Description                                                               |
+| Module              | Resource                                                                  |
 | ------------------- | ------------------------------------------------------------------------- |
-| `account`           | Creates and configures an AWS Account as a managed infrastructure target. |
-| `availability-zone` | tbd. |
-| `kms`               | tbd. |
-| `login`             | tbd. |
-| `record`            | tbd. |
-| `region`            | tbd. |
-| `resolver`          | tbd. |
-| `router`            | tbd. |
-| `zone`              | tbd. |
+| core                | The UCS core defines the `resident.toml` that holds together multiple subscriptions |
+| landing zone        | The landing zone introduces a `subscription.toml` that serves as root for AWS resouce definitions. |
 
 The resource catalog is intentionally small at this stage. Additional AWS resources are expected to be contributed by the community.
 
 ## Example
 
-A minimal configuration can define an AWS Account as follows:
+A minimal configuration can extend an AWS blueprint as follows:
 
 ```toml
+origin_resource = "network"
+
 [create_resouce]
-name = "your_name"
+name = "salesforce-enpoint-service"
 ```
 
 The module can then be used by Rescile UCS as the foundation for subsequent infrastructure resources.
@@ -91,13 +82,11 @@ AWS Account
 ├── LICENSE
 ├── NOTICE
 ├── CONTRIBUTING.md
-├── data/
-│   └── models/
-│       ├── account.toml
-│       ├── login.toml
-│       ├── resolver.toml
-│       ├── zone.toml
-│       └── record.toml
+├── input/
+│   └── aws.json
+├── models/
+│    ├── ...
+│    └── ...
 ├── output/
 │   └── ...
 └── runtimes/
