@@ -1,0 +1,15 @@
+origin_resource = "subscription"
+
+provider_name = "AWS"
+
+[[create_resource]]
+resource_type = "provider"
+relation_type = "BASELINE_TEMPLATE"
+name = "{{- provider_name | lower -}}"
+[create_resource.properties]
+function = "access"
+display = "Amazon Web Services"
+country = "US"
+sla = "https://aws.amazon.com/legal/service-level-agreements/"
+description = "Amazon Web Services (AWS) is a comprehensive, globally distributed cloud computing provider for on-demand IT infrastructure—including compute power, storage, databases, networking, and analytics—over the internet on a pay-as-you-go basis."
+created = "{{- now(utc=true) | date(format='%Y-%m-%dT%H:%M:%SZ') -}}"
