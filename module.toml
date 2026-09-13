@@ -7,4 +7,5 @@ rescile_version = ">=0.1.201"
 
 # List of other modules this module depends on.
 [dependencies]
-#landing-zone-module = "https://github.com/rescile/landing-zone-module"
+ucs-base            = "https://github.com/rescile/ucs-base"
+landing-zone-module = "https://github.com/rescile/landing-zone-module"
