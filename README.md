@@ -38,7 +38,7 @@ UCS provides the common control plane, while individual modules describe the inf
 ## Dependencies
 
 | Module              | Resource                                                                  |
-| ------------------- | ------------------------------------------------------------------------- |
+| ------------------- | ------------------------------------------------------------ |
 | core                | The UCS core defines the `resident.toml` that holds together multiple subscriptions |
 | landing zone        | The landing zone introduces a `subscription.toml` that serves as root for AWS resouce definitions. |
 
@@ -55,7 +55,7 @@ origin_resource = "network"
 name = "salesforce-enpoint-service"
 ```
 
-The module can then be used by Rescile UCS as the foundation for subsequent infrastructure resources.
+The module is used by Rescile UCS to define subsequent infrastructure resources at AWS.
 
 For example:
 
@@ -84,9 +84,11 @@ AWS Account
 ├── CONTRIBUTING.md
 ├── module.toml
 ├── input/
-│   └── aws.json
+│    ├── aws-roles.json
+│    ├── aws-portfolio.json
+│    └── aws-decoder.json
 ├── models/
-│    ├── ...
+│    ├── aws.toml
 │    └── ...
 ├── output/
 │   └── ...
