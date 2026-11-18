@@ -4,6 +4,7 @@ local portfolioData = import 'aws_services.libsonnet';
   title: 'AWS Provider Library',
   version: '0.0.1',
   name: 'aws',
+  description: 'AWS supplies infrastructure, platforms, and software, and provides operational services, such as monitoring, service desk, or security.',
 
   // Portfolio is represents keys of our portfolio data
   portfolio: std.objectFields(portfolioData),
@@ -54,7 +55,7 @@ local portfolioData = import 'aws_services.libsonnet';
     if std.objectHas(self.roles, roleName) then
       self.roles[roleName]
     else
-      error "Role '" + roleName + "' does not exist in Incus provider.",
+      error "Role '" + roleName + "' does not exist in AWS provider.",
 
   // Get all role keys associated with a service domain
   getServiceRoles(serviceName):: [
